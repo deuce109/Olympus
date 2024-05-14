@@ -1,0 +1,9 @@
+FROM python:alpine
+
+WORKDIR /build
+
+RUN apk add build-base linux-headers
+
+COPY ./builders/nix/build.ps1 ./builders/build.ps1
+
+CMD cd /app && /build/builders/build.ps1

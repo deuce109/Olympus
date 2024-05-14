@@ -3,6 +3,7 @@ import json
 import shutil
 import os
 import logging
+import sys
 from typing import List
 
 from config import Config
@@ -48,6 +49,11 @@ if args.format_url:
 else:
 
     Config.downloads_json = os.path.abspath(args.download_json)
+    
+    if not os.path.exists(Config.downloads_json):
+        parser.print_help()
+        sys.exit(1)
+    
     Config.output = os.path.abspath(args.output)
 
     Config.release_cache = args.cache
@@ -82,3 +88,6 @@ else:
         
         shutil.make_archive(Config.output, args.compress, Config.output)
         shutil.rmtree(Config.output)
+        
+        
+sys.exit(0)

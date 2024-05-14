@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  alpine-build:
+    build:
+      context: ../../
+      dockerfile: ./builders/nix/dockerfile
+    volumes:
+      - ../../out/unix:/app/dist
+      - ../../:/app

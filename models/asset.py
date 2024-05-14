@@ -5,8 +5,6 @@ import re
 import shutil
 import tempfile
 from typing import List
-import zipfile
-
 import requests
 
 from config import Config
