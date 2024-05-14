@@ -1,5 +1,9 @@
 # Usage
 
+Example download.json file located in `/examples`
+
+Please check json schema at `/examples/schema.json`
+
 ```
 usage: main.py [-h] [--cache CACHE] [--download-json DOWNLOAD_JSON] [--force] [--output OUTPUT] [--overwrite]
 
@@ -14,3 +18,9 @@ options:
                         Output directory to write downloaded files to
   --overwrite, -w       Remove existing output directory before downloading new files
 ```
+
+
+# Planned updates
+
+- Ability to download files from sites other than Github
+- github.com -> api.github.com url formatter
