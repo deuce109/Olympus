@@ -3,10 +3,13 @@ import json
 import shutil
 import os
 import logging
+from typing import List
 
 from config import Config
+from models.asset import Asset
+from models.downloadable import Downloadable
 from regex_patterns import github_ui_repo_re
-from repo import Repo
+from models.repo import Repo
 from validators import parse_int, check_url
 
 class colors:
@@ -51,6 +54,8 @@ else:
 
     Config.chunk_size = args.chunk_size
 
+    Config.force_release_download = args.force
+
 
     if args.overwrite and os.path.exists(Config.output):
         shutil.rmtree(Config.output)
@@ -59,11 +64,20 @@ else:
 
 
     with open(Config.downloads_json) as r:
-        downloads = json.load(r)
+        json_data: List[dict] = json.load(r)
 
-    repos = [Repo(**r) for r in downloads if r]
+    downloads: List[Downloadable] = []
+    for download in json_data:
+        release_url = download.get('releases_url', None)
+        print(release_url)
+        if release_url:
+            r = Repo(**download)
+            r.generate_assets(download.get('assets', []))
+            downloads.append(r)
+        else:
+            downloads.append(Asset.from_definition(download))
 
-    [repo.download_assets(args.force) for repo in repos]
+    [download.download() for download in downloads]
 
     if args.compress:
         

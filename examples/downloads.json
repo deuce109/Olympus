@@ -1,6 +1,6 @@
 [
     {
-        "name":"Hekate",
+        "name": "Hekate",
         "releases_url": "https://api.github.com/repos/CTCaer/hekate/releases",
         "assets": [
             {
@@ -12,7 +12,6 @@
                     }
                 ]
             }
-            
         ]
     },
     {
@@ -53,13 +52,25 @@
         "releases_url": "https://api.github.com/repos/mtheall/ftpd/releases",
         "assets": [
             {
-                "pattern": "ftpd\\.nro",
+                "name": "FTPD",
+                "pattern": "ftpd\\.nro$",
                 "moves": [
                     {
-                        "file_name_pattern": "ftpd\\.nro",
+                        "file_name_pattern": "ftpd\\.nro$",
                         "new_path": "switch"
                     }
                 ]
+            }
+        ]
+    },
+    {
+        "name": "Tinfoil",
+        "file_name": "tinfoil.nsp",
+        "download_url": "https://tinfoil.media/repo/Tinfoil%20%5B050000BADDAD0000%5D%5B17.0%5D%5Bv3%5D.nsp",
+        "moves": [
+            {
+                "file_name_pattern": "tinfoil\\.nsp",
+                "new_path": "nsps"
             }
         ]
     }
