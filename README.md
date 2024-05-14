@@ -23,4 +23,3 @@ options:
 # Planned updates
 
 - Ability to download files from sites other than Github
-- github.com -> api.github.com url formatter

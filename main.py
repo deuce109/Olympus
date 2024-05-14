@@ -4,6 +4,7 @@ import shutil
 import os
 import logging
 
+from config import Config
 from regex_patterns import github_ui_repo_re
 from repo import Repo
 from validators import parse_int, check_url
@@ -43,21 +44,21 @@ if args.format_url:
 
 else:
 
-    download_json = os.path.abspath(args.download_json)
-    output = os.path.abspath(args.output)
+    Config.downloads_json = os.path.abspath(args.download_json)
+    Config.output = os.path.abspath(args.output)
 
-    release_cache = args.cache
+    Config.release_cache = args.cache
 
-    chunk_size = args.chunk_size
+    Config.chunk_size = args.chunk_size
 
 
-    if args.overwrite and os.path.exists(output):
-        shutil.rmtree(output)
+    if args.overwrite and os.path.exists(Config.output):
+        shutil.rmtree(Config.output)
         
 
 
 
-    with open('./downloads.json') as r:
+    with open(Config.downloads_json) as r:
         downloads = json.load(r)
 
     repos = [Repo(**r) for r in downloads if r]
@@ -66,5 +67,5 @@ else:
 
     if args.compress:
         
-        shutil.make_archive(output, args.compress, output)
-        shutil.rmtree(output)
+        shutil.make_archive(Config.output, args.compress, Config.output)
+        shutil.rmtree(Config.output)

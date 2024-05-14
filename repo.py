@@ -136,7 +136,7 @@ class Repo():
                 shutil.copyfileobj(file, w )
 
     def _download_to_file(self, stream: requests.Response, file):
-        for chunk in stream.iter_content(chunk_size=8192):
+        for chunk in stream.iter_content(chunk_size=Config.chunk_size):
             file.write(chunk)
 
         return file
