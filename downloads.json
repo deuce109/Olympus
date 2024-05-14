@@ -1,0 +1,51 @@
+[
+    {
+        "name":"Hekate",
+        "releases_url": "https://api.github.com/repos/CTCaer/hekate/releases",
+        "assets": [
+            {
+                "pattern": "hekate_ctcaer_\\d+\\.\\d+\\.\\d+_Nyx_\\d+\\.\\d+\\.\\d+\\.zip",
+                "moves": [
+                    {
+                        "file_name_pattern": "hekate_ctcaer_\\d+\\.\\d+\\.\\d\\.bin",
+                        "new_path": "bootloader\\payloads"
+                    }
+                ]
+            }
+            
+        ]
+    },
+    {
+        "name": "Atmosphere",
+        "releases_url": "https://api.github.com/repos/Atmosphere-NX/Atmosphere/releases",
+        "assets": [
+            {
+                "pattern": "atmosphere-\\d\\.\\d\\.\\d\\-master\\-[0-9a-f]{9}\\+hbl\\-\\d\\.\\d\\.\\d\\+hbmenu\\-\\d\\.\\d\\.\\d\\.zip"
+            },
+            {
+                "pattern": "fusee\\.bin",
+                "moves": [
+                    {
+                        "file_name_pattern": "fusee\\.bin",
+                        "new_path": "bootloader\\payloads"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Goldleaf",
+        "releases_url": "https://api.github.com/repos/XorTroll/Goldleaf/releases",
+        "assets": [
+            {
+                "pattern": "Goldleaf\\.nro",
+                "moves": [
+                    {
+                        "file_name_pattern": "Goldleaf\\.nro",
+                        "new_path": "switch"
+                    }
+                ]
+            }
+        ]
+    }
+]
