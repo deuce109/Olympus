@@ -19,7 +19,4 @@ options:
   --overwrite, -w       Remove existing output directory before downloading new files
 ```
 
-
 # Planned updates
-
-- Ability to download files from sites other than Github
