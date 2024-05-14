@@ -69,7 +69,6 @@ else:
     downloads: List[Downloadable] = []
     for download in json_data:
         release_url = download.get('releases_url', None)
-        print(release_url)
         if release_url:
             r = Repo(**download)
             r.generate_assets(download.get('assets', []))

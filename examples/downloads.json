@@ -64,6 +64,16 @@
         ]
     },
     {
+        "name": "AIO Switch Updater",
+        "releases_url": "https://api.github.com/repos/HamletDuFromage/aio-switch-updater/releases",
+        "assets": [
+            {
+                "name": "AIO Switch Updater",
+                "pattern": "aio-switch-updater\\.zip$"
+            }
+        ]
+    },
+    {
         "name": "Tinfoil",
         "file_name": "tinfoil.nsp",
         "download_url": "https://tinfoil.media/repo/Tinfoil%20%5B050000BADDAD0000%5D%5B17.0%5D%5Bv3%5D.nsp",
@@ -73,5 +83,10 @@
                 "new_path": "nsps"
             }
         ]
+    },
+    {
+        "name": "Sigpatches",
+        "file_name": "sigpatch.zip",
+        "download_url": "https://gbatemp.net/attachments/hekate-ams-package3-sigpatches-1-7-0p-cfw-18-0-1-zip.433221/"
     }
 ]
